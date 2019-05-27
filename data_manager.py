@@ -1,4 +1,4 @@
-import os
+import os,sys
 
 for f in os.listdir():
     fn,fext=os.path.splitext(f)
@@ -19,7 +19,7 @@ for f in os.listdir():
     if not os.path.isdir("Data\\Others"):
         os.mkdir("Data\\Others")
     
-    if f == "data_manager.py":
+    if f == os.path.basename(sys.argv[0]):
         continue
     if fext[1:] not in os.listdir("Data") and fext !="":
         os.mkdir("Data\\{}".format(fext[1:]))
